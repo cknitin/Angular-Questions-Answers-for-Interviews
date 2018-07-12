@@ -44,3 +44,33 @@ Open the app.component.html and add the following code
     </ul>
 
     <router-outlet></router-outlet>
+    
+# Setting and Fetching Angular 5 Route Parameters
+
+    {
+        path: 'about/:id',             // Add /:id here
+        component: AboutComponent
+    }
+    
+    <li><a routerLink="about/48">About</a></li>
+    
+Open the about.component.ts and import ActivatedRoute
+
+    import { Component, OnInit } from '@angular/core';
+    import { ActivatedRoute } from '@angular/router';      // Add this
+    
+    export class AboutComponent implements OnInit {
+  
+      constructor(private route: ActivatedRoute) { 
+        this.route.params.subscribe(res => console.log(res.id));
+      }
+
+      ngOnInit() {
+      }
+
+    }
+
+
+    
+    
+
