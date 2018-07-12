@@ -38,9 +38,9 @@ Now Add below lines in src/app/app.module.ts
     
 Open the app.component.html and add the following code
 
-<ul>
-  <li><a routerLink="">Home</a></li>
-  <li><a routerLink="about">About</a></li>
-</ul>
+    <ul>
+      <li><a routerLink="">Home</a></li>
+      <li><a routerLink="about">About</a></li>
+    </ul>
 
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
