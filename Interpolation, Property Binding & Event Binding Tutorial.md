@@ -23,9 +23,10 @@ It allows you to define properties in a component class, and communicate these p
 
         <input type="submit" class="btn" [value]="btnText">
 
-    # Two-Way Data Binding
-    What if we wanted to use our input textfield to both retrieve and set its value from a component class? We can use what's called ngModel to create that 2-way data binding.
-    First, we have to import the FormsModule in order to have access to ngModule
+# Two-Way Data Binding
+What if we wanted to use our input textfield to both retrieve and set its value from a component class? We can use what's called ngModel to create that 2-way data binding.
+
+First, we have to import the FormsModule in order to have access to ngModule
 
         import { FormsModule } from '@angular/forms';
 
