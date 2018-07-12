@@ -1,6 +1,6 @@
 # Auth Guard
 
-ng generate guard auth
+ng generate guard AuthguardGuard 
 
       import { Injectable } from '@angular/core';
       import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
