@@ -21,26 +21,26 @@ ng generate guard auth
             }
           return this.userService.isLoggednIn();
         }
-    }
+      }
     
   
   
-  import { RouterModule, Routes } from '@angular/router';
+        import { RouterModule, Routes } from '@angular/router';
 
-  import { DashboardComponent } from '../components/dashboard/dashboard.component';
+        import { DashboardComponent } from '../components/dashboard/dashboard.component';
 
-  export const appRoutes: Routes = [
-      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthguardGuard] },
-      { path: '**', redirectTo: 'login' }
-    ];
+        export const appRoutes: Routes = [
+            { path: 'dashboard', component: DashboardComponent, canActivate: [AuthguardGuard] },
+            { path: '**', redirectTo: 'login' }
+          ];
 
-    @NgModule({
-      imports: [ RouterModule.forRoot(appRoutes) ],
-      exports: [
-          RouterModule
-       ]
-    })
-   export class AppModule { }
+          @NgModule({
+            imports: [ RouterModule.forRoot(appRoutes) ],
+            exports: [
+                RouterModule
+             ]
+          })
+         export class AppModule { }
 
 
 
