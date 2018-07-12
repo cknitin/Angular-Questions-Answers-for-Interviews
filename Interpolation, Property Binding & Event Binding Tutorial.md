@@ -17,7 +17,7 @@ It allows you to define properties in a component class, and communicate these p
 
 
 # Property binding 
-    It's the same thing as interpolation, except you can set the properties and attributes of various HTML elements.
+It's the same thing as interpolation, except you can set the properties and attributes of various HTML elements.
 
         btnText: string = 'Add an Item';    // Add this line
 
