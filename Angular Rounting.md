@@ -9,21 +9,23 @@ Create and add below line of code in src/app/app-routing.module.ts
     import { AboutComponent } from './about/about.component';  // Add this
 
         const routes: appRoutes = [
-          {
+
+{
             path: '',
             component: HomeComponent
           },
           {
-            path: 'about',
+Component Router Navigation            path: 'about',
             component: AboutComponent
           }
         ];
     
-       @NgModule({
+Component Router Navigation       @NgModule({
         imports: [ RouterModule.forRoot(appRoutes) ],
         exports: [
             RouterModule
-         ]
+
+]
        }) 
        
 Now Add below lines in src/app/app.module.ts
@@ -70,7 +72,21 @@ Open the about.component.ts and import ActivatedRoute
 
     }
 
-
+# Component Router Navigation
     
-    
+Sometimes, you may need to change the router outlet component based on logic occurring in a component class.
+In this case, let's import the Router from the angular/router within our about.component.ts file:
 
+    import { Component, OnInit } from '@angular/core';
+    import { ActivatedRoute } from '@angular/router';
+    import { Router } from '@angular/router';             // Add this
+    
+    constructor(private route: ActivatedRoute, private router: Router) { 
+        sendMeHome() {
+        this.router.navigate(['']);
+    }
+    
+    <p>
+        This is what I'm all about. <a href="" (click)="sendMeHome()"><strong>Take me back</strong></a>.
+    </p>
+    
