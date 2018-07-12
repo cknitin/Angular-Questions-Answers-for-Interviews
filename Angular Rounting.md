@@ -26,10 +26,21 @@ Create and add below line of code in src/app/app-routing.module.ts
          ]
        }) 
        
- Now Add below lines in src/app/app.module.ts
+Now Add below lines in src/app/app.module.ts
  
     import { RoutingModule } from './common/routing.module';
     
     @NgModule({
         imports: [ RoutingModule ]
        }) 
+    
+    export class AppModule { }
+    
+Open the app.component.html and add the following code
+
+<ul>
+  <li><a routerLink="">Home</a></li>
+  <li><a routerLink="about">About</a></li>
+</ul>
+
+<router-outlet></router-outlet>
