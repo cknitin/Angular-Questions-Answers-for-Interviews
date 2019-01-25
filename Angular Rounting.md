@@ -9,24 +9,22 @@ Create and add below line of code in src/app/app-routing.module.ts
     import { AboutComponent } from './about/about.component';  // Add this
 
         const routes: appRoutes = [
+        {
+                    path: '',
+                    component: HomeComponent
+        },
+        {
+                    Component Router Navigation
+                    path: 'about',
+                    component: AboutComponent
+         }];
 
-{
-            path: '',
-            component: HomeComponent
-          },
-          {
-Component Router Navigation            path: 'about',
-            component: AboutComponent
-          }
-        ];
-    
-Component Router Navigation       @NgModule({
-        imports: [ RouterModule.forRoot(appRoutes) ],
-        exports: [
-            RouterModule
+Component Router Navigation       
 
-]
-       }) 
+        @NgModule({
+                    imports: [ RouterModule.forRoot(appRoutes) ],
+                    exports: [ RouterModule ]
+                  }) 
        
 Now Add below lines in src/app/app.module.ts
  
