@@ -45,7 +45,7 @@ Add the UserService in app.module.ts
       })
      export class AppModule { }
 
----------------------------------------------------------------------------------------
+
 # TO DO Services
 
     import { Injectable } from '@angular/core';
@@ -82,7 +82,7 @@ Add the UserService in app.module.ts
         return this.http.put(url, todo, httpOptions);
       }
     }
------------------------------------------------------------------------------
+
     
 # Using ToDo Service in controller
 
