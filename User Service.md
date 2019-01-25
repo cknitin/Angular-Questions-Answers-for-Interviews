@@ -45,3 +45,70 @@ Add the UserService in app.module.ts
       })
      export class AppModule { }
 
+---------------------------------------------------------------------------------------
+
+    import { Injectable } from '@angular/core';
+    import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
+    import { Todo } from '../models/todo';
+    import { Observable } from 'rxjs';
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    @Injectable({
+      providedIn: 'root'
+    })
+
+    export class TodoService {
+      todosUrl = 'https://jsonplaceholder.typicode.com/todos';
+      toDos: Todo[];
+      constructor(private http: HttpClient) { }
+
+      public GetToDos(): Observable<Todo[]> {
+        return this.http.get<Todo[]>(this.todosUrl);
+      }
+
+      public PutToDos(toDo: Todo) {
+        return this.http.put(this.todosUrl + '/post/1', toDo, httpOptions);
+      }
+
+      // Toggle Completed
+      toggleCompleted(todo: Todo): Observable<any> {
+        const url = `${this.todosUrl}/${todo.id}`;
+        return this.http.put(url, todo, httpOptions);
+      }
+    }
+-----------------------------------------------------------------------------
+    
+Using ToDo Service in controller
+
+
+    import { Component, OnInit } from '@angular/core';
+    import { TodoService } from '../../services/todo.service';
+    import { Todo } from '../../models/todo';
+
+    @Component({
+      selector: 'app-todo',
+      templateUrl: './todo.component.html',
+      styleUrls: ['./todo.component.css']
+    })
+    export class TodoComponent implements OnInit {
+
+      toDos: Todo[];
+      constructor(private toDoService: TodoService) {
+
+          toDoService.GetToDos().subscribe(todos => {
+            this.toDos = todos;
+            console.log(JSON.stringify(todos));
+          });
+       }
+
+      ngOnInit() {
+      }
+
+    }
+
+
