@@ -35,8 +35,8 @@ AngularJS is constantly updating the state of both the form and the input fields
 ## Input fields have the following states:
 
  - $untouched The field has not been touched yet
- - uched The field has been touched
- - istine The field has not been modified yet
+ - $tuched The field has been touched
+ - $pistine The field has not been modified yet
  - $dirty The field has been modified
  - $invalid The field content is not valid
  - $valid The field content is valid
