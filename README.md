@@ -29,6 +29,16 @@ This repo contains all basic and advance angular questions for interviews
      </form>     
  
 
+### CSS
+
+    .ng-valid[required], .ng-valid.required  {
+      border-left: 5px solid #42A948; /* green */
+    }
+
+    .ng-invalid:not(form)  {
+      border-left: 5px solid #a94442; /* red */
+    }
+
 # Form State and Input State
 AngularJS is constantly updating the state of both the form and the input fields.
 
