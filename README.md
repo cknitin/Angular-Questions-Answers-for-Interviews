@@ -60,3 +60,55 @@ AngularJS is constantly updating the state of both the form and the input fields
  - $valid The form content is valid
  - $submitted The form is submitted
  - They are all properties of the form, and are either true or false.
+ 
+ # Reactive Form
+ 
+ ## Step 1: Registering the reactive forms module
+ 
+#### src/app/app.module.ts 
+
+    import { ReactiveFormsModule } from '@angular/forms';
+
+    @NgModule({
+      imports: [
+        ReactiveFormsModule
+      ],
+    })
+    export class AppModule { }
+ 
+ ## Step 2: Generating and importing a new form control
+ 
+ ### Generate a component for the control.
+
+    ng generate component NameEditor
+    
+ ### src/app/name-editor/name-editor.component.ts
+ 
+    import { Component } from '@angular/core';
+    import { FormControl } from '@angular/forms';
+
+    @Component({
+      selector: 'app-name-editor',
+      templateUrl: './name-editor.component.html',
+      styleUrls: ['./name-editor.component.css']
+    })
+    export class NameEditorComponent {
+      name = new FormControl('');
+    }
+ 
+## Step 3: Registering the control in the template
+
+### src/app/name-editor/name-editor.component.html
+
+    <label>
+      Name:
+      <input type="text" [formControl]="name">
+    </label>
+    
+### src/app/app.component.html (name editor)
+
+    <app-name-editor></app-name-editor>
+    
+For more infromation
+
+https://angular.io/guide/reactive-forms
